@@ -1,0 +1,137 @@
+
+:root{
+--bg: #0f1220;
+--bg-soft: #151935;
+--card: #0e1430;
+--text: #e6e7ef;
+--muted: #aeb2c7;
+--primary: #6c8cff;
+--accent: #ff6ec7;
+--line: #7b89ff;
+--shadow: 0 10px 30px rgba(0,0,0,.35);
+--radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body{
+margin:0;
+color:var(--text);
+background: radial-gradient(1200px 600px at 70% -10%, rgba(255,110,199,.08), transparent 60%),
+radial-gradient(900px 500px at -10% 20%, rgba(108,140,255,.08), transparent 60%),
+var(--bg);
+font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.container{
+width:min(1100px, 92%);
+margin-inline:auto;
+}
+
+.section{ padding: 72px 0; }
+.section.alt{ background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); }
+.section-title{
+font-family: "Montserrat Alternates", sans-serif;
+font-weight: 600;
+letter-spacing: .4px;
+font-size: clamp(1.6rem, 1rem + 2vw, 2.2rem);
+text-shadow: 0 6px 22px rgba(108,140,255,.25);
+margin:0 0 28px;
+}
+
+.site-header{
+position: sticky; top:0; z-index: 50;
+backdrop-filter: blur(8px);
+background: linear-gradient(180deg, rgba(10,12,25,.75), rgba(10,12,25,.35));
+border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.header-inner{
+display:flex; align-items:center; justify-content:space-between;
+padding: 14px 0;
+}
+.logo{
+font-weight: 600; letter-spacing:.5px; display:inline-flex; gap:.4rem; align-items:center;
+text-decoration:none; color:var(--text);
+font-family: "Montserrat Alternates", sans-serif;
+}
+.logo .logo-mark{
+display:inline-grid; place-items:center;
+width:28px; height:28px; border-radius: 50%;
+background: linear-gradient(135deg, var(--accent), var(--primary));
+box-shadow: 0 8px 22px rgba(255,110,199,.25), 0 8px 26px rgba(108,140,255,.25);
+}
+
+.nav { display:flex; gap: 18px; }
+.nav-link{
+position:relative; text-decoration:none; color:var(--muted); padding: 8px 6px;
+transition: color .25s ease;
+font-weight: 500;
+}
+.nav-link::after{
+content:""; position:absolute; left: 8px; right: 8px; bottom: 4px; height: 2px;
+background: linear-gradient(90deg, var(--accent), var(--line));
+transform: scaleX(0); transform-origin: left;
+transition: transform .35s ease;
+border-radius: 2px;
+}
+.nav-link:hover{ color:var(--text); }
+.nav-link:hover::after{ transform: scaleX(1); }
+
+.hero{
+padding: 96px 0 72px;
+background:
+radial-gradient(800px 400px at 80% 10%, rgba(255,110,199,.12), transparent 60%),
+radial-gradient(900px 500px at 10% 30%, rgba(108,140,255,.12), transparent 65%);
+border-bottom: 1px solid rgba(255,255,255,.06);
+background-image: url(mountains.jpg);
+background-size: 100% 100%;
+}
+.hero-inner{ text-align:center; }
+.hero-title{
+margin: 0 0 10px;
+font-size: clamp(2rem, 1.2rem + 4vw, 4rem);
+line-height: 1.1;
+}
+.font-elegant{
+font-family: "Playfair Display", serif;
+display:inline-block;
+text-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.font-alt{
+font-family: "Montserrat Alternates", sans-serif;
+display:inline-block;
+color: transparent;
+background: linear-gradient(90deg, var(--accent), var(--primary));
+-webkit-background-clip: text; background-clip: text;
+}
+.hero-sub{
+color: var(--muted);
+margin: 6px auto 24px; max-width: 640px;
+}
+
+.btn{
+--btn-bg: var(--line);
+--btn-fg: #0b0e1d;
+position: relative; display:inline-block;
+padding: 14px 22px; border-radius: 999px; border: none;
+background: var(--btn-bg); color: var(--btn-fg); font-weight: 700;
+letter-spacing: .2px; text-decoration: none; cursor: pointer;
+box-shadow: 0 8px 22px rgba(108,140,255,.25);
+transition: transform .18s ease, box-shadow .25s ease, filter .25s ease;
+will-change: transform;
+outline: none;
+}
+.btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 36px rgba(108,140,255,.35); }
+.btn:active{ transform: translateY(0); filter: brightness(.98); }
+
+.btn-primary{ --btn-bg: linear-gradient(135deg, var(--primary), #9faeff); }
+.btn-accent{ --btn-bg: linear-gradient(135deg, var(--accent), #ff9ad8); }
+
+.btn-glow:hover{
+box-shadow:
+0 0 14px rgba(255,110,199,.55),
+}
